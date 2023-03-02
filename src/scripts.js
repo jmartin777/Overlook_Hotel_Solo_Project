@@ -42,10 +42,19 @@ function submitForm(event){
             data[0].customers[currentCustomer].id;
             console.log("UserID = " + data[0].customers[currentCustomer].id);
             
-            
             var customerProfile = new Customers(nameInput, data[0].customers[currentCustomer].id);
-            var bookingsProfile = new Bookings(customerProfile,data[1]);
-            console.log(bookingsProfile.roomID[0])
+            if(!(typeof customerProfile === "undefined")){
+                console.log("found user profile")
+                var bookingProfile = new Bookings(customerProfile,data[1]);
+                console.log(bookingProfile.roomNumber)
+            }
+            
+            if(!(typeof bookingProfile === "undefined")){
+                console.log("found booking profile")
+                var roomsProfile = new Rooms(bookingProfile,data[2])
+                console.log(roomsProfile)
+            }
+            
         }
         else{
             console.log("match not found");
