@@ -44,8 +44,8 @@ function submitForm(event){
             
             
             var customerProfile = new Customers(nameInput, data[0].customers[currentCustomer].id);
-            
-            console.log(customerProfile)
+            var bookingsProfile = new Bookings(customerProfile,data[1]);
+            console.log(bookingsProfile.roomID[0])
         }
         else{
             console.log("match not found");
