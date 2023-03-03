@@ -1,4 +1,6 @@
 class Customers{
+    
+    
     constructor(name, password, data){
         let currentCustomer = -1;
         let customerFound = false;
@@ -14,7 +16,7 @@ class Customers{
                 console.log("match found");
             }
         }
-        if(customerFound === true){
+        if(customerFound === true && password === rootPass){
             data.customers[currentCustomer].id;
             console.log("UserID = " + data.customers[currentCustomer].id);
             this.name = data.customers[currentCustomer].name;
